@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Example
+  version: 1.0.0
+paths:
+  /api/{prefix}/example:one:
+    post:
+      operationId: exampleOne
+      parameters:
+        - in: path
+          name: prefix
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'One'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - one
+                properties:
+                  one:
+                    type: string
+
+  /api/{prefix}/example:two:
+    post:
+      operationId: exampleTwo
+      parameters:
+        - in: path
+          name: prefix
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Two'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - two
+                properties:
+                  two:
+                    type: string
